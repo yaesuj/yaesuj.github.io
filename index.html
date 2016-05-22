@@ -346,7 +346,12 @@
 <li><strong>blog</strong> 就是博客源文件夹，上面各个bat实际上都是在源文件上做各种修改</li>
 <li><strong>support</strong>  支持它的运行所需的一些文件，集成了Git、NODEJS、NPM，不用单独安装了</li>
 <li><strong>重置配置文件</strong> 如它所说的</li>
-<li>PS：实际上最基础的只需要先做那两个配置，然后把文章图片什么的放到相应的文件夹里，直接渲染并部署就行了，其他的设置涉及修改blog源文件<h3 id="创建你的第一篇文章"><a href="#创建你的第一篇文章" class="headerlink" title="创建你的第一篇文章"></a>创建你的第一篇文章</h3>尝试创建一篇有各种Markdown语法的文章并部署，试试效果<h2 id="用七牛云空间存储图片并产生外链以便在Markdown中调用"><a href="#用七牛云空间存储图片并产生外链以便在Markdown中调用" class="headerlink" title="用七牛云空间存储图片并产生外链以便在Markdown中调用"></a>用七牛云空间存储图片并产生外链以便在Markdown中调用</h2><h3 id="开始使用七牛云"><a href="#开始使用七牛云" class="headerlink" title="开始使用七牛云"></a>开始使用七牛云</h3><h4 id="七牛云注册账号之后，进行实名认证，再绑定支付宝，可以获得10G永久免费空间"><a href="#七牛云注册账号之后，进行实名认证，再绑定支付宝，可以获得10G永久免费空间" class="headerlink" title="七牛云注册账号之后，进行实名认证，再绑定支付宝，可以获得10G永久免费空间"></a>七牛云注册账号之后，进行实名认证，再绑定支付宝，可以获得10G永久免费空间</h4><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu1.png" alt=""><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu2.png" alt=""><h4 id="登陆控制台，在个人面板中查看密钥并记录，有AK和SK两个密钥"><a href="#登陆控制台，在个人面板中查看密钥并记录，有AK和SK两个密钥" class="headerlink" title="登陆控制台，在个人面板中查看密钥并记录，有AK和SK两个密钥"></a>登陆控制台，在个人面板中查看密钥并记录，有AK和SK两个密钥</h4><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu3.png" alt=""><h4 id="创建一个公开的资源空间，点击左侧的添加资源即可"><a href="#创建一个公开的资源空间，点击左侧的添加资源即可" class="headerlink" title="创建一个公开的资源空间，点击左侧的添加资源即可"></a>创建一个公开的资源空间，点击左侧的添加资源即可</h4><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu4.png" alt=""><h4 id="下载七牛客户端："><a href="#下载七牛客户端：" class="headerlink" title="下载七牛客户端："></a>下载七牛客户端：</h4><a href="http://developer.qiniu.com/code/v6/tool/qrsbox.html" target="_blank" rel="external">七牛开发者中心-qrsbox 图形界面上传同步工具</a><br>直接打开qrsbox，进行同步配置，同步源目录可以设定为F:\hexo\qiniu。qrxbox启动后会在 Windows 的任务栏中显示托盘，它会自动将源目录与你创建的公开资源空间进行文件同步，可以登陆网页端查看它们<br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu5.jpg" alt=""><br>####如果上传失败<br>参考<a href="http://developer.qiniu.com/article/developer/responsebody.html#http-code" target="_blank" rel="external">HTTP状态码</a>查找错误，我第一次上传失败反馈错误401，很容易就确定是密钥错误，查看一下配置文件是因为粘贴AccessKey的时候开头多了一个空格<br>####关于同步传输的实验<br>在七牛客户端托盘运行的情况下，在源文件夹hexo\qiniu中做以下操作：<ul>
+<li>PS：实际上最基础的只需要先做那两个配置，然后把文章图片什么的放到相应的文件夹里，直接渲染并部署就行了，其他的设置涉及修改blog源文件<h3 id="创建你的第一篇文章"><a href="#创建你的第一篇文章" class="headerlink" title="创建你的第一篇文章"></a>创建你的第一篇文章</h3>尝试创建一篇有各种Markdown语法的文章并部署，试试效果<h2 id="关于图片的调用链接"><a href="#关于图片的调用链接" class="headerlink" title="关于图片的调用链接"></a>关于图片的调用链接</h2></li>
+<li>我原先是习惯在<a href="http://www.wiz.cn/" target="_blank" rel="external">为知笔记</a>里编辑Markdown笔记，图片则是本地导入或是直接用QQ截图Ctrl+Alt+A放进去的，现在想要发布到博客，问题来了，为知笔记里的图片URL是本地目录，直接保存下来发到博客是没用的，而且为知笔记不能另存为成.md格式</li>
+<li>如果按照最笨的方法，就得在Hexo\blog\source里建立一个image文件夹，把图片放到里面，在Markdown里写这个图片的路径，然后一并部署到Github，这太繁琐了</li>
+<li>如果能上传图片到云端，然后生成公开的URL随意调用就方便多了，于是我查了一下生成外链的工具，找到了国内广泛使用的七牛云存储，接下来先给大家介绍这个工具</li>
+<li>后来我改用了-MarkdownPad2编辑器，在它的官网下的，似乎可以直接给图片产生外链，不过这是付费功能</li>
+<li>现在我又下了个MarkdownPad2破解版。。说是可以使用完全的功能，还没试过。。试成功了我马上支持正版。。<h3 id="将图片上传至七牛云产生外链"><a href="#将图片上传至七牛云产生外链" class="headerlink" title="将图片上传至七牛云产生外链"></a>将图片上传至七牛云产生外链</h3>####1. 在<a href="https://portal.qiniu.com/" target="_blank" rel="external">七牛云</a>注册账号之后，进行实名认证，再绑定支付宝，可以获得10G永久免费空间<br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu1.png" alt=""><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu2.png" alt=""><br>####2. 登陆控制台，在个人面板中查看密钥并记录，有AK和SK两个密钥<br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu3.png" alt=""><br>####3. 创建一个公开的资源空间，点击左侧的添加资源即可<br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu4.png" alt=""><br>####4. 将图片上传至七牛云<br>#####方法1. 使用七牛客户端进行同步操作<br><a href="http://developer.qiniu.com/code/v6/tool/qrsbox.html" target="_blank" rel="external">七牛开发者中心-qrsbox 图形界面上传同步工具</a><br>直接打开qrsbox，进行同步配置，同步源目录可以设定为F:\hexo\qiniu。qrxbox启动后会在 Windows 的任务栏中显示托盘，它会自动将源目录与你创建的公开资源空间进行文件同步，可以登陆网页端查看它们，要在文章中插入图片时就在七牛云端复制外链做成Markdown语句即可，麻烦的是要一个个点击复制，<br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu5.jpg" alt=""><br><img src="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu6.png" alt=""><br>######如果上传失败<br>参考<a href="http://developer.qiniu.com/article/developer/responsebody.html#http-code" target="_blank" rel="external">HTTP状态码</a>查找错误，我第一次上传失败反馈错误401，很容易就确定是密钥错误，查看一下配置文件是因为粘贴AccessKey的时候开头多了一个空格<br>######关于七牛客户端同步传输的实验<br>在七牛客户端托盘运行的情况下，在源文件夹hexo\qiniu中做以下操作：<ul>
 <li>添加新的文件XXX.XXX</li>
 <li>云端立即同步，命名为XXX.XXX</li>
 <li>在文件夹中的XXX.XXX重命名为YYY.YYY</li>
@@ -356,11 +361,10 @@
 <li>删除hexo\qiniu\YYY.YYY</li>
 <li>云端的文件YYY.YYY仍然存在 </li>
 <li>在云端删除YYY.YYY，并将回收站中的YYY.YYY还原</li>
-<li>云端并未出现YYY.YYY，未产生同步</li>
+<li>云端并未出现YYY.YYY，未产生同步<br>#####方法2. 使用极简图床上传图片<br><a href="http://yotuku.cn/" target="_blank" rel="external">极简图床</a>是一个基于七牛的第三方网页端上传工具，将图片拖入浏览器即可上传（可以一次拖进多个图片批量上传），在右上角进行七牛云密钥、域名的相关设置后可以自动同步至七牛云，然后自动生成Markdown图片语句，上传和引用都比直接用七牛客户端和云端方便多了<br><img src="http://o7k1eh6rm.bkt.clouddn.com/16-5-22/67712415.jpg" alt=""><br>目前我是先用QQ截图把图截下来直接粘贴到极简图床里，再把自动生成的Markdown语句粘到编辑器里，这个工具真是太棒了<h2 id="Hexo进阶配置"><a href="#Hexo进阶配置" class="headerlink" title="Hexo进阶配置"></a>Hexo进阶配置</h2><h3 id="blog目录结构"><a href="#blog目录结构" class="headerlink" title="blog目录结构"></a>blog目录结构</h3><h3 id="修改blog源文件"><a href="#修改blog源文件" class="headerlink" title="修改blog源文件"></a>修改blog源文件</h3><h2 id="NexT安装与配置"><a href="#NexT安装与配置" class="headerlink" title="NexT安装与配置"></a>NexT安装与配置</h2>NexT是Hexo的一种主题，非常美妙，至于NexT怎么使用，它的<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">官网</a>讲的肥肠清楚，我就不赘述了。啊，我是偷懒了，以后有空再用自己的语言和自己的操作截图解释这个事情</li>
 </ul>
 </li>
 </ul>
-<h2 id="Hexo进阶配置"><a href="#Hexo进阶配置" class="headerlink" title="Hexo进阶配置"></a>Hexo进阶配置</h2><h3 id="blog目录结构"><a href="#blog目录结构" class="headerlink" title="blog目录结构"></a>blog目录结构</h3><h3 id="修改blog源文件"><a href="#修改blog源文件" class="headerlink" title="修改blog源文件"></a>修改blog源文件</h3><h2 id="NexT安装与配置"><a href="#NexT安装与配置" class="headerlink" title="NexT安装与配置"></a>NexT安装与配置</h2><p>NexT是Hexo的一种主题，非常美妙，至于NexT怎么使用，它的<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">官网</a>讲的肥肠清楚，我就不赘述了。啊，我是偷懒了，以后有空再用自己的语言和自己的操作截图解释这个事情</p>
 <hr>
 <h1 id="问题与解决方案："><a href="#问题与解决方案：" class="headerlink" title="问题与解决方案："></a>问题与解决方案：</h1><ol>
 <li>用NPM装Hexo不成功，显示机器不兼容<ul>
@@ -539,107 +543,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/20/我一博/" itemprop="url">
-                  我的第一个博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T15:41:40+08:00" content="2016-05-20">
-              2016-05-20
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/20/我一博/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/我一博/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我的第一个博客</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/05/20/WIN7+UBUNTU14.04双系统（WIN7引导）安装教程/" itemprop="url">
                   WIN7+UBUNTU14.04双系统（WIN7引导）安装教程
                 </a>
@@ -732,6 +635,107 @@
 </ul>
 <h1 id="阶段3，-重启计算机，选择UBUNTU系统，开始使用UBUNTU"><a href="#阶段3，-重启计算机，选择UBUNTU系统，开始使用UBUNTU" class="headerlink" title="阶段3， 重启计算机，选择UBUNTU系统，开始使用UBUNTU"></a>阶段3， 重启计算机，选择UBUNTU系统，开始使用UBUNTU</h1><hr>
 <p>前期试验走了很多弯路，一共装了UBUNTU14、KALI2.0、WIN7三个系统，同志们一定要好好引导<br>另外这个百度云是多年收藏的精华。。以后还会分享更多奇特的东西XD</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/20/我一博/" itemprop="url">
+                  我的第一个博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-20T15:41:40+08:00" content="2016-05-20">
+              2016-05-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/20/我一博/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/我一博/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我的第一个博客</p>
 
           
         
