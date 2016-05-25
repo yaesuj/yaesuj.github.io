@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://o7k1eh6rm.bkt.clouddn.com/hexo-%E6%95%99%E7%A8%8B/qiniu6.png">
 <meta property="og:image" content="http://o7k1eh6rm.bkt.clouddn.com/16-5-22/67712415.jpg">
 <meta property="og:image" content="http://o7k1eh6rm.bkt.clouddn.com/16-5-25/42358150.jpg">
-<meta property="og:updated_time" content="2016-05-25T06:27:35.121Z">
+<meta property="og:updated_time" content="2016-05-25T06:29:15.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始Windows下GithubPages+Hexo+NexT构建静态博客">
 <meta name="twitter:description" content="Title:从零开始Windows下GithubPages+Hexo+NexT构建静态博客Author:YAESUJ
@@ -387,7 +387,9 @@
 </li>
 </ul>
 <p>只要在<strong>hexo\blog\themes\yourthemename\layout_partials\footer.swig</strong>里添加几行HTML代码即可，我对原来的代码做了一些小改动，从没见过HTML语言的我还现学了两个HTML语法：</p>
-<figure class="highlight plain"><figcaption><span>--> 是注释，嘿嘿。```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下面就是我改过的代码了，直接粘贴就能使用，换行符很关键，试了就知道</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;br/&gt;</span><br><span class="line">&lt;!-- 不蒜子页面访问计数工具 --&gt;  </span><br><span class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 不蒜子脚本（必装），调用计数核心代码 --&gt;  </span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人到此一游&lt;/span&gt;</span><br><span class="line">&lt;!-- 总访客数标签（选装），在页面显示计数，可以将其中汉字改成自己喜欢的字 --&gt;  </span><br><span class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;，文章被看过&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br><span class="line">&lt;!-- 总访问量标签（选装），在页面显示计数，可以将其中汉字改成自己喜欢的字 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span>是换行符，<span class="comment">&lt;!-- --&gt;</span> 是注释，嘿嘿。</span><br></pre></td></tr></table></figure>
+<p>下面就是我改过的代码了，直接粘贴就能使用，换行符很关键，试了就知道</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 不蒜子页面访问计数工具 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 不蒜子脚本（必装），调用计数核心代码 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人到此一游<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 总访客数标签（选装），在页面显示计数，可以将其中汉字改成自己喜欢的字 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span>，文章被看过<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 总访问量标签（选装），在页面显示计数，可以将其中汉字改成自己喜欢的字 --&gt;</span></span><br></pre></td></tr></table></figure>
 <p>效果：<br><img src="http://o7k1eh6rm.bkt.clouddn.com/16-5-25/42358150.jpg" alt=""></p>
 <h2 id="提交到搜索引擎"><a href="#提交到搜索引擎" class="headerlink" title="提交到搜索引擎"></a>提交到搜索引擎</h2><h2 id="屈站长搜索引擎提交工具"><a href="#屈站长搜索引擎提交工具" class="headerlink" title="屈站长搜索引擎提交工具"></a><a href="http://www.sousuoyinqingtijiao.com/" target="_blank" rel="external">屈站长搜索引擎提交工具</a></h2><h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><ol>
 <li>用NPM装Hexo不成功，显示机器不兼容<ul>
@@ -406,8 +408,9 @@
 <hr>
 <h1 id="新技能GET"><a href="#新技能GET" class="headerlink" title="新技能GET"></a>新技能GET</h1><ul>
 <li>用MarkdownPad2编辑Markdown文件挺舒服</li>
-<li>HTML语法<br><code>&lt;br/&gt;是换行符，&lt;!-- --&gt; 是注释</code></li>
+<li>HTML语法</li>
 </ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span>是换行符，<span class="comment">&lt;!-- --&gt;</span> 是注释</span><br></pre></td></tr></table></figure>
 
       
     </div>
