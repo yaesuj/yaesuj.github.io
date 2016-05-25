@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="我的第一个博客">
+<meta name="description" content="Title:WIN7+UBUNTU14.04双系统（WIN7引导）安装教程Author:YAESUJ
+
+准备工作整个教程没有图你敢信，然而应该是好用的。LINUX是一颗大树，有很多枝干，UBUNTU是其中一条。这是我的百度云，先在这里把要用到的软件下好：http://yun.baidu.com/pcloud/album/info?uk=1294310484&amp;amp;album_id=5057240">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一个博客">
-<meta property="og:url" content="yaesuj.github.io/2016/05/20/我的第一个博客/index.html">
+<meta property="og:title" content="WIN7+UBUNTU14.04双系统（WIN7引导）安装教程">
+<meta property="og:url" content="yaesuj.github.io/2016/05/20/WIN7引导UBUNTU14.04双系统教程/index.html">
 <meta property="og:site_name" content="YAESUJ's-CAVE">
-<meta property="og:description" content="我的第一个博客">
-<meta property="og:updated_time" content="2016-05-20T07:44:29.301Z">
+<meta property="og:description" content="Title:WIN7+UBUNTU14.04双系统（WIN7引导）安装教程Author:YAESUJ
+
+准备工作整个教程没有图你敢信，然而应该是好用的。LINUX是一颗大树，有很多枝干，UBUNTU是其中一条。这是我的百度云，先在这里把要用到的软件下好：http://yun.baidu.com/pcloud/album/info?uk=1294310484&amp;amp;album_id=5057240">
+<meta property="og:updated_time" content="2016-05-20T08:14:58.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一个博客">
-<meta name="twitter:description" content="我的第一个博客">
+<meta name="twitter:title" content="WIN7+UBUNTU14.04双系统（WIN7引导）安装教程">
+<meta name="twitter:description" content="Title:WIN7+UBUNTU14.04双系统（WIN7引导）安装教程Author:YAESUJ
+
+准备工作整个教程没有图你敢信，然而应该是好用的。LINUX是一颗大树，有很多枝干，UBUNTU是其中一条。这是我的百度云，先在这里把要用到的软件下好：http://yun.baidu.com/pcloud/album/info?uk=1294310484&amp;amp;album_id=5057240">
 
 
 
@@ -111,7 +117,7 @@
   };
 </script>
 
-  <title> 我的第一个博客 | YAESUJ's-CAVE </title>
+  <title> WIN7+UBUNTU14.04双系统（WIN7引导）安装教程 | YAESUJ's-CAVE </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +257,7 @@
             
             
               
-                我的第一个博客
+                WIN7+UBUNTU14.04双系统（WIN7引导）安装教程
               
             
           </h1>
@@ -274,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/20/我的第一个博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/我的第一个博客/" itemprop="commentsCount"></span>
+                <a href="/2016/05/20/WIN7引导UBUNTU14.04双系统教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/WIN7引导UBUNTU14.04双系统教程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,7 +304,47 @@
       
 
       
-        <p>我的第一个博客</p>
+        <p>Title:WIN7+UBUNTU14.04双系统（WIN7引导）安装教程<br>Author:YAESUJ</p>
+<hr>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>整个教程没有图你敢信，然而应该是好用的。<br>LINUX是一颗大树，有很多枝干，UBUNTU是其中一条。<br>这是我的百度云，先在这里把要用到的软件下好：<br><a href="http://yun.baidu.com/pcloud/album/info?uk=1294310484&amp;album_id=5057240083867339101" target="_blank" rel="external">http://yun.baidu.com/pcloud/album/info?uk=1294310484&amp;album_id=5057240083867339101</a><br>要下的是：</p>
+<ul>
+<li>ubuntukylin-14.04.2（系统镜像文件）</li>
+<li>Diskgenius（分区软件，x86表示32位系统，x64表示64位系统）</li>
+<li>ULTRAISO （做系统盘的）</li>
+<li>EASYBCD（设置引导菜单的，用于多系统启动的选择）</li>
+</ul>
+<hr>
+<p>然后跟我一步步做：</p>
+<h1 id="阶段1，清理系统，分出空闲磁盘，制作系统盘"><a href="#阶段1，清理系统，分出空闲磁盘，制作系统盘" class="headerlink" title="阶段1，清理系统，分出空闲磁盘，制作系统盘"></a>阶段1，清理系统，分出空闲磁盘，制作系统盘</h1><ul>
+<li>进入WIN7系统 </li>
+<li>分区<ul>
+<li>打开Diskgenius（x86表示32位系统，x64表示64位系统），把CDE以外的都删除（清理原来装的其他系统，把盘符精简一下），选择E盘右键调整分区大小，余下约150G空闲空间用来装UBUNTU，最后要 点击左上角的保存设置，关闭</li>
+</ul>
+</li>
+<li>【用ULTRAISO制作系统盘】准备一个空U盘，文件-打开-找到系统镜像文件（后缀名为ISO），启动-写入硬盘映像，格式化，点击write写入，这就将系统写入你的U盘了</li>
+<li>写入完毕后它还是能作为正常U盘使用的，你可以在U盘根目录上自己再建一个独立的文件夹把其他要用的文件装在里面</li>
+</ul>
+<h1 id="阶段2，用U盘装系统"><a href="#阶段2，用U盘装系统" class="headerlink" title="阶段2，用U盘装系统"></a>阶段2，用U盘装系统</h1><ol>
+<li>开机的时候把装了系统的U盘插进去，不停摁F2进入BIOS界面（不同主板不一样，华硕主板一般是F2，可以自己百度）</li>
+<li>选择boot菜单-把最下面的BOOT OPTION选项改成你的U盘（原来默认从硬盘启动，现在改为从U盘启动）</li>
+<li>ESC退出，保存设置（save changes）</li>
+<li>重启电脑后进入UBUNTU启动界面（如果没进就重复2.），选择install ubuntu kylin进入UBUNTU安装界面</li>
+</ol>
+<ul>
+<li><strong><em>到这里就要注意不要随便乱点下一步，看清楚再点，否则可能造成地球毁灭，最好断网安装</em></strong></li>
+<li><strong>选择语言</strong> 拉到最下面选择中文简体</li>
+<li><strong> 安装类型 </strong>  界面选择其他选项（自己创建，调整分区）</li>
+<li><strong>开始分区</strong> 点击阶段1分出来的空闲分区150G，双击编辑分区， 设置为：<strong>主分区，空间起始位置，用于：ext4文件系统，挂载点：/</strong> <ul>
+<li>LINUX新手就分这一个区就够了，多了也没什么用</li>
+</ul>
+</li>
+<li><strong>这里是关键，注意，可能造成太阳系毁灭</strong> 看清楚刚才产生的那个分区（挂载点：/）的标注，按照刚才的一套分区设置应该是SDA3（不过也不一定，看具体情况）</li>
+<li>在下面的<strong> 安装启动引导器的设备 </strong> 选择这个号码（我现在是SDA3，你要看具体情况）。这样操作是把UBUNTU的引导放在/里面而不是修改整个磁盘的引导顺序，这样重启之后就是用WIN7引导UBUNTU</li>
+<li><strong> 开始安装 </strong>  我这里名字写xd，密码123，勾选自动登录</li>
+<li><strong> 修改引导菜单 </strong>  重启进入WIN7系统，打开EASYBCD，编辑引导菜单-把除了WIN7以外的都删除，添加新条目-linux/bsd-GRUB2-驱动器：150G那个区。超时选项：等待用户选择。保存设置，关闭</li>
+</ul>
+<h1 id="阶段3，-重启计算机，选择UBUNTU系统，开始使用UBUNTU"><a href="#阶段3，-重启计算机，选择UBUNTU系统，开始使用UBUNTU" class="headerlink" title="阶段3， 重启计算机，选择UBUNTU系统，开始使用UBUNTU"></a>阶段3， 重启计算机，选择UBUNTU系统，开始使用UBUNTU</h1><hr>
+<p>前期试验走了很多弯路，一共装了UBUNTU14、KALI2.0、WIN7三个系统，同志们一定要好好引导<br>另外这个百度云是多年收藏的精华。。以后还会分享更多奇特的东西XD</p>
 
       
     </div>
@@ -323,12 +369,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/20/我的第一个博客/" rel="next" title="我的第一个博客">
+                <i class="fa fa-chevron-left"></i> 我的第一个博客
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/20/WIN7引导UBUNTU14.04双系统教程/" rel="prev" title="WIN7+UBUNTU14.04双系统（WIN7引导）安装教程">
-                WIN7+UBUNTU14.04双系统（WIN7引导）安装教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/20/GRC自动脚本/" rel="prev" title="GNURADIO+HACKRF自动安装脚本">
+                GNURADIO+HACKRF自动安装脚本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -355,8 +405,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/20/我的第一个博客/"
-           data-title="我的第一个博客" data-url="yaesuj.github.io/2016/05/20/我的第一个博客/">
+      <div class="ds-thread" data-thread-key="2016/05/20/WIN7引导UBUNTU14.04双系统教程/"
+           data-title="WIN7+UBUNTU14.04双系统（WIN7引导）安装教程" data-url="yaesuj.github.io/2016/05/20/WIN7引导UBUNTU14.04双系统教程/">
       </div>
     
   </div>
@@ -433,7 +483,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阶段1，清理系统，分出空闲磁盘，制作系统盘"><span class="nav-number">2.</span> <span class="nav-text">阶段1，清理系统，分出空闲磁盘，制作系统盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阶段2，用U盘装系统"><span class="nav-number">3.</span> <span class="nav-text">阶段2，用U盘装系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阶段3，-重启计算机，选择UBUNTU系统，开始使用UBUNTU"><span class="nav-number">4.</span> <span class="nav-text">阶段3， 重启计算机，选择UBUNTU系统，开始使用UBUNTU</span></a></li></ol></div>
             
           </div>
         </section>
